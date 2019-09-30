@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Welcome to Detect Duplicate Dataset’s documentation! &#8212; Detect Duplicate Dataset 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-detect-duplicate-dataset-s-documentation">
+<h1>Welcome to Detect Duplicate Dataset’s documentation!<a class="headerlink" href="#welcome-to-detect-duplicate-dataset-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>This document will contain brief description of the functions used in the program along with references</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="below-are-the-functions-which-are-used-for-developing-the-solution">
+<h1>Below are the functions which are used for developing the solution<a class="headerlink" href="#below-are-the-functions-which-are-used-for-developing-the-solution" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Using IQR method, this fuction will remove the 5% records from the beginning and from the end of a shorted list</p></li>
+</ul>
+<span class="target" id="module-CleanupScripts.RemoveOutliers"></span><dl class="function">
+<dt id="CleanupScripts.RemoveOutliers.outliersiqr">
+<code class="sig-prename descclassname">CleanupScripts.RemoveOutliers.</code><code class="sig-name descname">outliersiqr</code><span class="sig-paren">(</span><em class="sig-param">dset</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/CleanupScripts/RemoveOutliers.html#outliersiqr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#CleanupScripts.RemoveOutliers.outliersiqr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>This function will find the similarity between two string arrays by using Lavenstein distance algorithm</p></li>
+</ul>
+<span class="target" id="module-PythonScripts.CheckTablesWithColumnNames"></span><dl class="function">
+<dt id="PythonScripts.CheckTablesWithColumnNames.checkTableWithCoulmnNames">
+<code class="sig-prename descclassname">PythonScripts.CheckTablesWithColumnNames.</code><code class="sig-name descname">checkTableWithCoulmnNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/PythonScripts/CheckTablesWithColumnNames.html#checkTableWithCoulmnNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonScripts.CheckTablesWithColumnNames.checkTableWithCoulmnNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>This function will create a 2D array of mean and standard deviation for a given input dataset for the neumerical columns</p></li>
+</ul>
+<span class="target" id="module-PythonScripts.ExtractInputsFromToBeTestFile"></span><dl class="function">
+<dt id="PythonScripts.ExtractInputsFromToBeTestFile.inputtablevalues">
+<code class="sig-prename descclassname">PythonScripts.ExtractInputsFromToBeTestFile.</code><code class="sig-name descname">inputtablevalues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/PythonScripts/ExtractInputsFromToBeTestFile.html#inputtablevalues"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonScripts.ExtractInputsFromToBeTestFile.inputtablevalues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>This function will find the root mean square error between two neumerical array inputs</p></li>
+</ul>
+<span class="target" id="module-PythonScripts.RMSEofArrays"></span><dl class="function">
+<dt id="PythonScripts.RMSEofArrays.rmseofarrays">
+<code class="sig-prename descclassname">PythonScripts.RMSEofArrays.</code><code class="sig-name descname">rmseofarrays</code><span class="sig-paren">(</span><em class="sig-param">prediction</em>, <em class="sig-param">target</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/PythonScripts/RMSEofArrays.html#rmseofarrays"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonScripts.RMSEofArrays.rmseofarrays" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>Using matplotlib and seaborn, this function will produce the scatter plot of all columns from a given dataset</p></li>
+</ul>
+<span class="target" id="module-VisualizationScripts.ScatterPlot"></span><dl class="function">
+<dt id="VisualizationScripts.ScatterPlot.scatterplotgrouped">
+<code class="sig-prename descclassname">VisualizationScripts.ScatterPlot.</code><code class="sig-name descname">scatterplotgrouped</code><span class="sig-paren">(</span><em class="sig-param">dset</em>, <em class="sig-param">colx</em>, <em class="sig-param">coly</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/VisualizationScripts/ScatterPlot.html#scatterplotgrouped"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#VisualizationScripts.ScatterPlot.scatterplotgrouped" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>Using matplotlib and seaborn, this function will produce the box plots for all  neumerical columns in a dataset or for 2 dependent columns or for a single column</p></li>
+</ul>
+<span class="target" id="module-VisualizationScripts.BoxPlot"></span><dl class="function">
+<dt id="VisualizationScripts.BoxPlot.boxplotallnum">
+<code class="sig-prename descclassname">VisualizationScripts.BoxPlot.</code><code class="sig-name descname">boxplotallnum</code><span class="sig-paren">(</span><em class="sig-param">dset</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/VisualizationScripts/BoxPlot.html#boxplotallnum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#VisualizationScripts.BoxPlot.boxplotallnum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="VisualizationScripts.BoxPlot.boxplotgrouped">
+<code class="sig-prename descclassname">VisualizationScripts.BoxPlot.</code><code class="sig-name descname">boxplotgrouped</code><span class="sig-paren">(</span><em class="sig-param">dset</em>, <em class="sig-param">colx</em>, <em class="sig-param">coly</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/VisualizationScripts/BoxPlot.html#boxplotgrouped"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#VisualizationScripts.BoxPlot.boxplotgrouped" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="VisualizationScripts.BoxPlot.boxplotsingle">
+<code class="sig-prename descclassname">VisualizationScripts.BoxPlot.</code><code class="sig-name descname">boxplotsingle</code><span class="sig-paren">(</span><em class="sig-param">dset</em>, <em class="sig-param">col</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/VisualizationScripts/BoxPlot.html#boxplotsingle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#VisualizationScripts.BoxPlot.boxplotsingle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>Using matplotlib and seaborn, this function will product the distribution plot for all neumerical columns in a dataset</p></li>
+</ul>
+<span class="target" id="module-VisualizationScripts.DistributionPlot"></span><dl class="function">
+<dt id="VisualizationScripts.DistributionPlot.distplot">
+<code class="sig-prename descclassname">VisualizationScripts.DistributionPlot.</code><code class="sig-name descname">distplot</code><span class="sig-paren">(</span><em class="sig-param">dset</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/VisualizationScripts/DistributionPlot.html#distplot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#VisualizationScripts.DistributionPlot.distplot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Detect Duplicate Dataset</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, sugata.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

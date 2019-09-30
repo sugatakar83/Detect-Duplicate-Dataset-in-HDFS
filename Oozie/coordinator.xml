@@ -1,0 +1,23 @@
+<coordinator-app name="Check Duplicates in Hadoop"
+                 frequency="${checkDuplicateFrequency}"
+                 start="${checkDuplicateStartTime}" end="${checkDuplicateEndTime}" timezone="UTC"
+                 xmlns="uri:oozie:coordinator:0.2">
+    <controls>
+        <concurrency>1</concurrency>
+        <execution>FIFO</execution>
+        <throttle>1</throttle>
+    </controls>
+
+    <action>
+        <workflow>
+            <app-path>${check_duplicates_load_application_path}/workflow.xml</app-path>
+            <configuration>
+                <property>
+                    <name>oozie.use.system.libpath</name>
+                    <value>true</value>
+                </property>
+            </configuration>
+        </workflow>
+    </action>
+
+</coordinator-app>

@@ -1,0 +1,22 @@
+from sklearn.datasets import load_boston
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+# create the object of the load_boston class
+boston = load_boston()
+#x = boston.data
+#y = boston.target
+# get the column names
+columns = boston.feature_names
+#create the dataframe
+boston_df = pd.DataFrame(boston.data)
+boston_df.columns = columns
+print(boston_df.head())
+# box plot of DIS column
+sns.boxplot(x=boston_df['DIS'])
+plt.show()
+# scatter plot
+sns.scatterplot(boston_df['INDUS'], boston_df['TAX'])
+plt.show()
+
+

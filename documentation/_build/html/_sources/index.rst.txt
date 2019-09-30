@@ -1,0 +1,56 @@
+.. Detect Duplicate Dataset documentation master file, created by
+   sphinx-quickstart on Tue Sep 10 23:39:02 2019.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Detect Duplicate Dataset's documentation!
+====================================================
+
+This document will contain brief description of the functions used in the program along with references
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+Below are the functions which are used for developing the solution
+==================================================================
+
+* Using IQR method, this fuction will remove the 5% records from the beginning and from the end of a shorted list
+.. automodule:: CleanupScripts.RemoveOutliers
+   :members:
+|
+* This function will find the similarity between two string arrays by using Lavenstein distance algorithm
+.. automodule:: PythonScripts.CheckTablesWithColumnNames
+   :members:
+|
+* This function will create a 2D array of mean and standard deviation for a given input dataset for the neumerical columns
+.. automodule:: PythonScripts.ExtractInputsFromToBeTestFile
+   :members:
+|
+.. automodule:: PythonScripts.PermutationTest
+   :members:
+|
+* This function will find the root mean square error between two neumerical array inputs
+.. automodule:: PythonScripts.RMSEofArrays
+   :members:
+|
+* Using matplotlib and seaborn, this function will produce the scatter plot of all columns from a given dataset
+.. automodule:: VisualizationScripts.ScatterPlot
+   :members:
+|
+* Using matplotlib and seaborn, this function will produce the box plots for all  neumerical columns in a dataset or for 2 dependent columns or for a single column
+.. automodule:: VisualizationScripts.BoxPlot
+   :members:
+|
+* Using matplotlib and seaborn, this function will product the distribution plot for all neumerical columns in a dataset
+.. automodule:: VisualizationScripts.DistributionPlot
+   :members:

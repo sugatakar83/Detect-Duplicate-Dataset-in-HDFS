@@ -1,0 +1,17 @@
+# HDFS location where table structures are stored in format - <dbname>.<tablename>.<constant value>
+tablefilepath: /Users/sugatakumarkar/Desktop/DataScience/TestData
+# HDFS location where table structures are stored in format - <dbname>.<tablename>.<constant value> for the shortlisted tables
+# This is a TEMPORARY location and has to be deleted before running the program
+tablefilepathshortlisted: /home/DSProject/DataFiles/TableStructuresShortListed
+# Extra characters which are present in the file name along with <dbname>.<tablename>
+filenamecontent: table_struct
+# LOCAL directory location of the input table in .txt/.csv format, which is intended to be inserted in TAP. The table must have a HEADER record
+inputtablelocation: /Users/sugatakumarkar/Desktop/DataScience/TestData/lab_map.ighs_ap_yfs_order_line_h.table_struct.txt
+# comma separated column names of the input table, which is intended to be inserted in TAP
+inputtablecolumns: amount_collected,shipment_no,currency,status
+# LOCAL directory where table names will be stored which matched the input w.r.t column names
+tablefilepathcoulmnmatch: /Users/sugatakumarkar/Desktop/DataScience/
+# HDFS Directory for storing log files
+exceptionloggingfilepath: /Users/sugatakumarkar/Desktop/DataScience/DetectDuplicateDatasets/
+# Threshold value of the log file size in MB. More than this, the file will be
+logfilesizeinBytes: 1000

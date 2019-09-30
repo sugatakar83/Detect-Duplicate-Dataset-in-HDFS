@@ -1,0 +1,79 @@
+<workflow-app name="Check Duplicates in Hadoop" xmlns="uri:oozie:workflow:0.5">
+
+    <credentials>
+        <credential name='hive_auth' type='hcat'>
+            <property>
+                <name>hcat.metastore.uri</name>
+                <value>thrift://</value>
+            </property>
+            <property>
+                <name>hcat.metastore.principal</name>
+                <value>hive/_HOST@</value>
+            </property>
+        </credential>
+    </credentials>
+
+    <start to="GetAllDatabaseNames"/>
+
+    <action name="GetAllDatabaseNames" cred="hive_auth">
+        <ssh xmlns="uri:oozie:ssh-action:0.1">
+            <host>${stageUser}@${stageNodeHostname}</host>
+            <command>${findDuplicatesAppLocalDir}/getDatabaseNames.sh</command>
+        </ssh>
+        <ok to="GetAllTableNames"/>
+        <error to="kill-email"/>
+
+    </action>
+
+    <action name="GetAllTableNames" cred="hive_auth">
+        <ssh xmlns="uri:oozie:ssh-action:0.1">
+            <host>${stageUser}@${stageNodeHostname}</host>
+            <command>${findDuplicatesAppLocalDir}/getTableNames.sh</command>
+        </ssh>
+        <ok to="GetAllTableStructures"/>
+        <error to="kill-email"/>
+    </action>
+
+    <action name="GetAllTableStructures" cred="hive_auth">
+        <ssh xmlns="uri:oozie:ssh-action:0.1">
+            <host>${stageUser}@${stageNodeHostname}</host>
+            <command>${findDuplicatesAppLocalDir}/getTableStructures.sh</command>
+        </ssh>
+        <ok to="CheckDuplicatesbyColumnsNames"/>
+        <error to="kill-email"/>
+    </action>
+
+    <action name="CheckDuplicatesbyColumnsNames" cred="hive_auth">
+        <ssh xmlns="uri:oozie:ssh-action:0.1">
+            <host>${stageUser}@${stageNodeHostname}</host>
+            <command>${findDuplicatesAppLocalDir}/CheckTablesWithColumnNames.py</command>
+        </ssh>
+        <ok to="CheckDuplicatesbyColumnsValues"/>
+        <error to="kill-email"/>
+    </action>
+
+    <action name="CheckDuplicatesbyColumnsValues" cred="hive_auth">
+        <ssh xmlns="uri:oozie:ssh-action:0.1">
+            <host>${stageUser}@${stageNodeHostname}</host>
+            <command>${findDuplicatesAppLocalDir}/TableDataAnalysisForDuplicacy.py</command>
+        </ssh>
+        <ok to="End"/>
+        <error to="kill-email"/>
+    </action>
+
+    <action name="kill-email">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${emailList}</to>
+            <subject>Duplicate Check Loading failed ${wf:id()} - Failure</subject>
+            <body>Duplicate Check Loading failed : Error message[${wf:errorMessage(wf:lastErrorNode())}] </body>
+        </email>
+        <ok to="kill"/>
+        <error to="kill"/>
+    </action>
+
+    <kill name="kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+
+    <end name="End"/>
+</workflow-app>
